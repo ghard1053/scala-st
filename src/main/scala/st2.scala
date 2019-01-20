@@ -56,3 +56,46 @@ def validByAge(in: List[Person]) =
     in.filter(_.valid).
     sort(_.age < _.age).
     map(_.first)
+
+List(8, 6, 22, 2).reduceLeft(_ max _)
+List(1, 2, 3, 4).foldLeft(0) (_ + _)
+
+val n = (1 to 3).toList
+n.map(i => n.map(j => i * j))
+n.flatMap(i => n.map(j => i * j))
+
+def isOdd(in: Int) = in % 2 == 1
+def isEven(in: Int) = !isOdd(in)
+val n = (1 to 10).toList
+for  { i <- n if isEven(i); j <- n if isOdd(j)} yield i * j
+
+def sumSq(in: List[Double]): (Int, Double, Double) =
+  in.foldLeft((0, 0d, 0d))((t, v) => (t._1 + 1, t._2 + v, t._3 + v * v))
+
+def sumSq(in: List[Double]) : (Int, Double, Double) =
+  in.foldLeft((0, 0d, 0d)) {
+    case ((cnt, sum, sq), v) => (cnt + 1, sum + v, sq + v * v)}
+  }
+
+var p = Map(1 -> "David", 9 -> "Elwood")
+p + 8 -> "Archer"
+p = p + 8 -> "Archer"
+p += 8 -> "Archer"
+p(9)
+p.get(88) // None
+p.get(9) // Some(Elwood)
+
+p.getOrElse(99, "Nobody")
+
+p -= 9
+p.contains(1) // Boolean = true
+
+p.keys.reduceLeft(_ max _)
+p.values.reduceLeft((a, b) => if (a > b) a else b)
+p.values.exists(_.contains("z"))
+p ++= List(5 -> "Cat", 6 -> "Dog")
+p --= List(8, 6)
+
+def removeInvalid(in: Map[Int, Person]) = in.filter(kv => kv._2.valid)
+
+
