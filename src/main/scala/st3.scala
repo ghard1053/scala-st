@@ -21,3 +21,36 @@ def plus(a: Int, b: Int) = "Result is: " + (a + b)
 val p = (b: Int) => plus(42, b)
 
 def add(a: Int)(b: Int) = "Result is: " + (a + b)
+add(1)(2)
+
+add(1){
+  val r = new java.util.Random
+  r.nextInt(100)
+}
+
+w42(add(1))
+
+def f2 = add(1) _
+w42(f2)
+
+def t42[T](f: Int => T): T = f(42)
+
+t42(f)
+t42(1 +)
+
+val intList: Int => List[Int] = i => (1 to i).toList
+t42(intList)
+
+t42[Int](1 +)
+
+val foo = "dog"
+val whoTo = (s: String) => s + " " + foo
+whoTo("I love my")
+
+var strs: List[String] = Nil
+val strF = (s: String) => {strs ::= s; s + " Registered"}
+
+strF("a")
+strF("b")
+
+List("p", "q", "r").map(strF)
