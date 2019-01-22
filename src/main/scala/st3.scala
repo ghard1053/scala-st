@@ -54,3 +54,51 @@ strF("a")
 strF("b")
 
 List("p", "q", "r").map(strF)
+
+
+def bf: Int => Int => Int = i => v => i + v
+val fs = (1 to 100).map(bf).toArray
+fs(0)(1)
+
+
+def randomName = "I" + Math.abs((new java.util.Random).nextLong)
+
+trait JavaScript
+
+var callbacks: Map[String, () => JavaScript] = Map()
+
+def register(f: () => JavaScript) = {
+  val name = randomName
+  callbacks += name -> f
+  <button onclick={"invokeServerCall('"+name+"')"}>ClickMe</button>
+}
+
+
+sealed trait Expr
+  case class Add(left: Expr, right: Expr) extends Expr
+  case class Mul(left: Expr, right: Expr) extends Expr
+  case class Val(value: Int) extends Expr
+  case class Var(name: String) extends Expr
+
+def calc(expr: Expr, vars: Map[String, Int]): Int = expr match {
+  case Add(left, right) => calc(left, vars) + calc(right, vars)
+  case Mul(left, right) => calc(left, vars) * calc(right, vars)
+  case Val(v) => v
+  case Var(name) => vars(name)
+}
+
+def buildCalc(expr: Expr): Map[String, Int] => Int = expr match {
+  case Add(left, right) =>
+    val lf = buildCalc(left)
+    val rf = buildCalc(right)
+    m => lf(m) + rf(m)
+
+  case Mul(left, right) =>
+    val lf = buildCalc(left)
+    val rf = buildCalc(right)
+    m => lf(m) * rf(m)
+
+  case Val(v) => m => v
+
+  case Var(name) => m => m(name)
+}
