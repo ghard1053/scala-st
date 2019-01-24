@@ -57,3 +57,46 @@ val oneTwoThree2 = 1 :: twoThree
 
 val oneTwoThree3 = 1 :: 2 :: 3 :: Nil
 
+
+val pair = (99, "Luftballons")
+println(pair._1)
+println(pair._2)
+
+var jetSet = Set("Boeing", "Airbus")
+jetSet += "Lear"
+println(jetSet.contains("Cessna"))
+
+import scala.collection.mutable.Set
+val movieSet = Set("Hitch", "Poltergeist")
+movieSet += "Shrek"
+println(movieSet)
+
+import  scala.collection.immutable.HashSet
+val hashSet = HashSet("Tomatoes", "Chilies")
+println(hashSet + "Coriander")
+
+
+import scala.collection.mutable.Map
+val treasureMap = Map[Int, String]()
+treasureMap += (1 -> "Go to island.")
+treasureMap += (2 -> "Find big X on ground.")
+treasureMap += (3 -> "Dig.")
+println(treasureMap(2))
+
+val romanNumeral = Map(
+  1 -> "I", 2 -> "II", 3 -> "III", 4 -> "IV", 5 -> "V"
+)
+println(romanNumeral(4))
+
+
+def printArgs(args: Array[String]): Unit = {
+  for (arg <- args)
+    println(arg)
+}
+
+def printArgs2(args: Array[String]): Unit = {
+  args.foreach(println)
+}
+
+def formatArgs(args: Array[String]) = args.mkString("\n")
+println(formatArgs(args))
