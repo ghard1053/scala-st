@@ -74,3 +74,26 @@ val inc9999 = makeIncreaser(9999)
 inc1(10)
 inc9999(10)
 
+
+def echo(args: String*) =
+  for (arg <- args) println(arg)
+
+var arr = Array("a", "b", "c")
+echo(arr: _*)
+
+def printTime(out: java.io.PrintStream = Console.out) =
+  out.println("time = " + System.currentTimeMillis())
+
+def printTime2(out: java.io.PrintStream = Console.out, divisor: Int = 1) =
+  out.println("time = " + System.currentTimeMillis()/divisor)
+printTime2(out = Console.err)
+printTime2(divisor = 1000)
+
+
+def approximate(guess: Double): Double =
+  if (isGoodEnough(guess)) guess
+  else approximate(improve(guess))
+
+def bang(x: Int): Int =
+  if (x == 0) throw new Exception("bang!")
+  else bang(x - 1)
