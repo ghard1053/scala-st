@@ -48,3 +48,17 @@ num match  {
   case 4 => println("Equal to 4")
   case other => println("Greater than 4")
 }
+
+var i = 0
+while (i < 3) {
+  println(i)
+  i += 1
+}
+
+val filtered = Seq(1, 2, 3).filter(i => i > 1)
+val doubled = Seq(1, 2, 3).map(i => i * 2)
+Seq(1, 2, 3).filter(_ > 1)
+Seq(1, 2, 3).map(_ * 2)
+
+Seq(Seq(1, 2), Seq(3, 4)).flatMap { s => println(s); s }
+
