@@ -62,3 +62,87 @@ Seq(1, 2, 3).map(_ * 2)
 
 Seq(Seq(1, 2), Seq(3, 4)).flatMap { s => println(s); s }
 
+val results: Seq[Int] = for {
+  i <- (1 to 3)
+  j <- (2 to 4)
+  k <- (3 to 5)
+  result = (i * j * k) if result % 3 == 0
+} yield result
+
+
+def puts(value: String): Unit = {
+  println(value)
+}
+puts("Hello")
+
+val x: Unit = ()
+val y: Unit = x
+
+
+def add(x: Int, y: Int): Int = ???
+
+def requirePositive(n: Int): Int =
+  if (n > 0) n else throw new IllegalArgumentException("n must be positive")
+
+s"1 + 2 = ${1 + 2}"
+
+val a = 1
+s"a = $a"
+
+val p: (Int, Int) = (10, 20)
+p._1
+p._2
+
+val q: (Int, Int, Int) = (30, 40, 50)
+q._1
+q._2
+q._3
+
+q match {
+  case (x, y, z) =>
+    println(x)
+    println(y)
+    println(z)
+}
+
+//type Point = (Int, Int, Int)
+//val p: Point = (60, 70, 80)
+
+val person: (String, Int) = ("Taro", 18)
+person._1
+person._2
+
+
+val p1: Point = new Point(10, 10)
+val p2: Point = new Point(100, 100)
+println(p1.distance(p2))
+println(math.abs(p1.x - p2.x))
+println(p1 + p2)
+
+class Point(val x: Int, val y: Int) {
+  def distance(that: Point): Int = {
+    val xdiff = math.abs(this.x - that.x)
+    val ydiff = math.abs(this.y - that.x)
+    math.sqrt(xdiff * xdiff + ydiff * ydiff).toInt
+  }
+  def +(that: Point): Point =
+    new Point(x + that.x, y + that.y)
+}
+
+abstract class Shape {
+  def draw(): Unit = {
+    println("不明な図形")
+  }
+}
+
+class Triangle extends Shape {
+  override def draw(): Unit = {
+    println("三角形")
+  }
+}
+class Rectangle extends Shape {
+  override def draw(): Unit = {
+    println("四角形")
+  }
+}
+class UnknownShape extends Shape
