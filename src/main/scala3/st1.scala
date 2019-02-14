@@ -146,3 +146,9 @@ class Rectangle extends Shape {
   }
 }
 class UnknownShape extends Shape
+
+
+trait Namable {
+  val name: String
+  def display(): Unit = println(name)
+}
