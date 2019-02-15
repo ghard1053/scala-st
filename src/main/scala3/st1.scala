@@ -161,7 +161,7 @@ taro.display()
 
 import scala.collection.mutable.Buffer
 trait Enumerable[A] {
-  def foreach[B](fun: A => B):Unit
+  def foreach[B](fun: A => B): Unit
 
   final def map[B](f: A => B): List[B] = {
     var members = Buffer.empty[A]
@@ -173,6 +173,35 @@ trait Enumerable[A] {
 
   final def filter(p: A => Boolean): List[A] = {
     val members = Buffer.empty[A]
-    
+    foreach {m =>
+      if (p(m)) members += m
+    }
+    members.toList
+  }
+
+  final def toList: List[A] = {
+    val members = Buffer.empty[A]
+    foreach {m =>
+      members += m
+    }
+    members.toList
   }
 }
+
+class Staff(val name: String, val age: Int)
+
+class Shop(val name: String) extends AnyRef with Enumerable with Namable {
+  private[this] staffs: List[Staff] = List("taro", "jiro")
+
+  override def foreach[B](f: A => B): Unit = staffs.foreach(f)
+  ///
+}
+
+///
+val shop = ///
+shop.filter(_.age >= 20)
+
+shop.map(_.name)
+
+shop.toList
+shop.display()
