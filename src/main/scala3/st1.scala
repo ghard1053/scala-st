@@ -152,3 +152,27 @@ trait Namable {
   val name: String
   def display(): Unit = println(name)
 }
+
+class Employee(val name: String) extends AnyRef with Namable
+
+val taro = new Employee("taro")
+taro.display()
+
+
+import scala.collection.mutable.Buffer
+trait Enumerable[A] {
+  def foreach[B](fun: A => B):Unit
+
+  final def map[B](f: A => B): List[B] = {
+    var members = Buffer.empty[A]
+    foreach {m =>
+      members += f(m)
+    }
+    members.toList
+  }
+
+  final def filter(p: A => Boolean): List[A] = {
+    val members = Buffer.empty[A]
+    
+  }
+}
