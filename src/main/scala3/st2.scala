@@ -130,3 +130,60 @@ class RichInt(val self: Int) {
 }
 implicit def enrichInt(self: Int): RichInt = new RichInt(self)
 1.isPositive
+
+// implicit class
+implicit class RichInt(val self: Int) {
+  def isPositive: Boolean = self > 0
+}
+1.isPositive
+
+// implicit parameter
+implicit val context = 1
+def printContext(implicit ctx: Int): Unit = {
+  println(ctx)
+}
+printContext
+
+def printContext2(implicit ctx: Int): Unit = {
+  printContext
+}
+implicit val context = 2
+printContext2
+
+def sumInt(list: List[Int]): Int = list.foldLeft(0) {
+  (x, y) => x + y
+}
+def sumDouble(list: List[Double]): Double = list.foldLeft(0.0) {
+  (x, y) => x + y
+}
+def sumString(list: List[String]): String = list.foldLeft("") {
+  (x, y) => x + y
+}
+
+trait Adder[T] {
+  def zero: T
+  def plus(x: T, y: T): T
+}
+def sum[T](list: List[T])(adder: Adder[T]): T = {
+  list.foldLeft(adder.zero){ (x, y) => adder.plus(x, y) }
+}
+object IntAdder extends Adder[Int] {
+  def zero: Int = 0
+  def plus(x: Int, y: Int): Int = x + y
+}
+sum(List(1, 2, 3))(IntAdder)
+
+def sum[T](list: List[T])(implicit adder: Adder[T]): T = {
+  list.foldLeft(adder.zero){ (x, y) => adder.plus(x, y) }
+}
+implicit object IntAdder extends Adder[Int] {
+  def zero: Int = 0
+  def plus(x: Int, y: Int): Int = x + y
+}
+sum(List(1, 2, 3))
+
+implicit object StringAdder extends Adder[String] {
+  def zero: String = ""
+  def plus(x: String, y: String): String = x + y
+}
+sum(List("A", "B", "C"))
