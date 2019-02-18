@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f16c7902-39e6-4d74-a0e0-9fa1f11e4e1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala3/st2.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala3/st2.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala3/st3.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,40 +32,31 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="sbt" value="1" />
-          <entry key="scala" value="12" />
+          <entry key="scala" value="13" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Scala" value="12" />
+          <entry key="Scala" value="13" />
           <entry key="XML" value="2" />
           <entry key="sbt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="scala" value="24413" />
+          <entry key="scala" value="24724" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Scala" value="24413" />
+          <entry key="Scala" value="24724" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/st2.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/st.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -143,11 +134,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala3/st2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
+            <state relative-caret-position="2820">
               <caret line="188" column="24" lean-forward="true" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala3/st3.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -187,14 +187,15 @@
         <option value="$PROJECT_DIR$/src/main/scala2/st10.scala" />
         <option value="$PROJECT_DIR$/src/main/scala3/st1.scala" />
         <option value="$PROJECT_DIR$/src/main/scala3/st2.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala3/st3.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="86" />
-    <option name="y" value="66" />
-    <option name="width" value="2134" />
-    <option name="height" value="1027" />
+    <option name="x" value="-565" />
+    <option name="y" value="-1876" />
+    <option name="width" value="2137" />
+    <option name="height" value="1364" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -266,7 +267,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550389424853" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550501908765" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -348,10 +349,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="66" width="2134" height="1027" extended-state="0" />
+    <frame x="-565" y="-1876" width="2137" height="1364" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16347992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16324583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -359,7 +360,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.24213837" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -471,8 +472,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala3/st2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
+        <state relative-caret-position="2820">
           <caret line="188" column="24" lean-forward="true" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala3/st3.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
         </state>
       </provider>
     </entry>
