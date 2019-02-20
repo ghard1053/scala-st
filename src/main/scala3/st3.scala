@@ -48,3 +48,22 @@ seq4.filter(_ > 2)
 Seq(5, 1, 4, 2).sorted
 Seq("abc", "bcd", "ab").sorted
 Seq(5, 1, 4, 2).reverse
+
+case class MyClass(i: Int, j: Int)
+Seq(MyClass(3, 1), MyClass(1, 3), MyClass(2, 2)).sortBy(_.i)
+Seq(MyClass(3, 1), MyClass(1, 3), MyClass(2, 2)).sortBy(_.j)
+
+Seq("Hello", "Scala", "world").map(_.head)
+Seq("Hello", "Scala", "world").map(_.length)
+Seq(Seq(1, 2), Seq(), Seq(3, 4)).flatten
+Seq("Hello", "Scala").map(_.toSeq).flatten
+Seq("Hello", "Scala").flatMap(_.toSeq)
+
+Seq(1, 2, 3).foldLeft(0)((accumulator, element) =>
+  accumulator + element
+)
+Seq(1, 2, 3).foldLeft(0)(_ + _)
+Seq(1, 2, 3).foldRight(0)(_ + _)
+
+Seq("Hello", "Scala").foldLeft(0)(_ + _.length)
+Seq("Hello", "Scala").foldRight(0)(_.length + _)
