@@ -67,3 +67,20 @@ Seq(1, 2, 3).foldRight(0)(_ + _)
 
 Seq("Hello", "Scala").foldLeft(0)(_ + _.length)
 Seq("Hello", "Scala").foldRight(0)(_.length + _)
+
+def reverseByFoldleft[A](seq: Seq[A]) =
+  seq.foldLeft(Seq[A]())((a, e) => e +: a)
+
+def reverseByFoldRight[A](seq: Seq[A]) =
+  seq.foldRight(Seq[A]())((e, a) => a :+ e)
+
+reverseByFoldRight(Seq(1, 2, 3))
+
+Seq(1, 2, 3, 4, 5).reduceLeft(_ * _)
+Seq(1, 2, 3, 4, 5).reduceRight(_ * _)
+
+Seq(1, 2, 3, 1, 2).toSet
+Seq("hello" -> 1, "world" -> 2).toMap
+
+val s = mutable.Seq(1, 2)
+s.update(1, 3)
