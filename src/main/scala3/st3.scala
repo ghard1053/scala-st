@@ -84,3 +84,26 @@ Seq("hello" -> 1, "world" -> 2).toMap
 
 val s = mutable.Seq(1, 2)
 s.update(1, 3)
+
+val s = ("A", "B", "C")
+s.contains("A")
+s("A")
+
+s + "D"
+s ++ Set("D", "E")
+
+val d = mutable.Set(1, 2)
+d += 3
+d -= 2
+
+
+val priceList = Map("Apple" -> 150, "Orange" -> 100)
+priceList("Apple")
+priceList.get("Apple") //Some(150)
+priceList.getOrElse("Apple", 50)
+priceList.keys
+priceList.values
+priceList.size
+priceList + ("Banana" -> 120)
+priceList ++ Map("Banana" -> 120, "Lemon" -> 210)
+priceList - "Orange"
