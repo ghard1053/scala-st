@@ -1,4 +1,4 @@
-
+import javax.xml.soap.SOAPMessage
 
 val seq = Seq("A", "B", "C")
 seq(1)
@@ -107,3 +107,33 @@ priceList.size
 priceList + ("Banana" -> 120)
 priceList ++ Map("Banana" -> 120, "Lemon" -> 210)
 priceList - "Orange"
+
+
+val o1: Option[Int] = Some(1)
+val o2: Option[Int] = Some(2)
+val o3: Option[Int] = Some(3)
+
+for {
+  i1 <- o1
+  i2 <- o2
+  i3 <- o3
+} yield i1 + i2 + i3
+
+val list1 = List(1, 2, 3)
+val list2 = List("a", "b", "c")
+
+for {
+  e1 <- list1
+  e2 <- list2
+} println((e1, e2))
+
+for (
+  o <- Option(1);
+  l <- Seq(10, 20)
+) println(o + l)
+
+for {
+  e1 <- list1 if e1 % 2 == 1
+  e2 <- list2
+} println((e1, e2))
+
