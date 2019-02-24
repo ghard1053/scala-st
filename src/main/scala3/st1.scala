@@ -1,5 +1,4 @@
 
-
 def isAlphanumeric(str: String): Boolean = str.matches("a-z")
 //val isAlphamericF = isAlphanumeric _
 

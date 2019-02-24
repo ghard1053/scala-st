@@ -1,5 +1,4 @@
 
-
 // object
 object Foo {
   def foo(): Unit = {
