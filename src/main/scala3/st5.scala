@@ -1,6 +1,8 @@
 
 // Future
-import scala.concurrent.Future
+import java.net.UnknownHostException
+
+import scala.concurrent.{Await, Future}
 import scala.io.{BufferedSource, Source}
 import scala.io_
 import scala.util.{Failure, Success}
@@ -88,3 +90,28 @@ getAsync("https://www.scala-lang.org")
     case Success(urlList) => println("contain urls: " + urlList.mkString(" , "))
     case Failure(t) => t.printStackTrace()
   }
+
+getAsync("https://www.scala-lang.org").foreach {
+  body => println("body: " + body)
+}
+
+getAsync("https://www.scala-lang.org")
+  .recover {
+    case t => "NotFound?"
+  }
+.foreach {
+  body => println("body: " + body)
+}
+
+getAsync("https://www.scala-lang.org/scala")
+  .recoverWith {
+    case t: UnknownHostException =>
+      getAsync("https://www.scala-lang.org")
+    case t => Future.failed(t)
+  }
+  .foreach {
+    body => println("body: " + body)
+  }
+
+val future: Future[Int] = Future((1 to 10).sum)
+assert(Await.result(future, 10 seconds) == 55)
