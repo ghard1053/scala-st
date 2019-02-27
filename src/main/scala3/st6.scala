@@ -15,7 +15,7 @@ dbl(1) // 2
 
 List(1, 2, 3).collect { case n if n < 3 => n * 2 }
 
-// デフォルト引数
+// default parameter
 def join(list: List[String], separator: String): String =
   list.mkString(separator)
 join(List("a", "b", "c"), "") // "abc"
@@ -23,3 +23,25 @@ join(List("a", "b", "c"), "") // "abc"
 def join2(list: List[String], separator: String = ""): String =
   list.mkString(separator)
 join(List("a", "b", "c")) // "abc"
+
+// 名前付き引数
+def drawCircle(x: Int, y: Int, radius: Int) = ???
+drawCircle(x = 100, y = 100, radius = 5)
+drawCircle(radius = 5, x = 100, y = 100)
+
+// 値クラス
+case class Meter(value: Int)
+
+case class Meter2(value: Int) extends AnyVal
+
+implicit class StringExtention(val self: String) extends AnyVal {
+  def display(): Unit = println(self)
+}
+"F00".display()
+
+// 型メンバ
+class TypeMembers {
+  type T = String
+  val t: T = "FOO"
+}
+
