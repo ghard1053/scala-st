@@ -45,3 +45,28 @@ class TypeMembers {
   val t: T = "FOO"
 }
 
+trait Stacks {
+  type T
+  sealed abstract class Stack {
+    def isEmpty: Boolean
+    def top: T
+    def pop: Stack
+    def push(e: T): Stack = NonEmptyStack(e, this)
+  }
+  case class NonEmptyStack(head: T, tail: Stack) extends Stack {
+    def isEmpty: Boolean = false
+    def top: T = head
+    def pop: Stack = tail
+  }
+  case object EmptyStack extends Stack {
+    def isEmpty: Boolean = true
+    def top: T = ???
+    def pop: Stack = ???
+  }
+}
+
+class IntStacks extends Stacks {
+  type T = Int
+  val stack = EmptyStack.push(1).push(2).push(3)
+  println(stack.top) // 3
+}
