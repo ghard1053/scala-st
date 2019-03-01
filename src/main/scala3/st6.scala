@@ -70,3 +70,15 @@ class IntStacks extends Stacks {
   val stack = EmptyStack.push(1).push(2).push(3)
   println(stack.top) // 3
 }
+
+// 自分型アノテーション
+trait ModuleA {
+  def methodA(): Unit
+}
+
+trait ModuleB {self: ModuleA =>
+  def methodB(): Unit = {
+    methodA
+  }
+}
+
