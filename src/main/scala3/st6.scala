@@ -82,3 +82,24 @@ trait ModuleB {self: ModuleA =>
   }
 }
 
+//
+List(1, 2, 3).map((x) => { println(x); x + 1})
+List(1, 2, 3).map{x => println(x); x + 1}
+
+//
+def each[T](list: List[T])(f: T => Unit): Unit = {
+  list.foreach(f)
+}
+each(List(1, 2, 3)){x =>
+  println(x)
+}
+
+val f = each(List(1, 2, 3)) _
+f{x => print(x)} // 123
+
+// eta(η) expansion
+List(1, 2, 3, 4, 5).foreach(println _)
+List(1, 2, 3, 4, 5).foreach(println)
+List(1, 2, 3, 4, 5).foreach(x => println(x))
+
+// by-name parameter
