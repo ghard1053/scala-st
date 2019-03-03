@@ -103,3 +103,76 @@ List(1, 2, 3, 4, 5).foreach(println)
 List(1, 2, 3, 4, 5).foreach(x => println(x))
 
 // by-name parameter
+
+// extractor
+object Positive {
+  def unapply(n: Int): Option[Int] = if (n > 0) Some(n) else None
+}
+
+1 match {
+  case Positive(_) =>
+    println("1 is positive")
+  case _ =>
+    println("1 is not positive")
+}
+-1 match {
+  case Positive(_) =>
+    println("-1 is positive")
+  case _ =>
+    println("-1 is not positive")
+}
+
+object Positive2 {
+  def unapply(n: Int): Boolean = n > 0
+}
+
+1 match {
+  case Positive2() =>
+    println("is positive")
+  case _ =>
+    print("is not positive")
+}
+
+// implicit
+package hoge
+trait Adder[T] {
+  def zero: T
+  def plus(x: T, y: T)
+}
+object Adder {
+  implicit object IntAdder extends Adder[Int] {
+    def zero: Int = 0
+    def plus(x: Int, y: Int): Int = x + y
+  }
+  implicit object StringAdder extends Adder[String] {
+    def zero: String = ""
+    def plus(x: String, y: String): String = x + y
+  }
+}
+
+import hoge.Adder
+def sum[T](list: List[T])(implicit adder: Adder[T]): T =
+  list.foldLeft(adder.zero) {
+    (x, y) => adder.plus(x, y)
+  }
+
+sum(List(1, 2, 3))
+sum(List("A", "B", "C"))
+
+
+// 式指向
+import scala.annotation.tailrec
+
+def sumUp(start: Int, end: Int): Int = {
+  @tailrec
+  def doSumUp(current: Int, subtotal: Int): Int =
+    if (current > end)
+      subtotal
+    else
+      doSumUp(current + 1, subtotal + current)
+
+  doSumUp(start, 0)
+}
+
+def sumUp2(start: Int, end: Int): Int = (start to end).sum
+
