@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f16c7902-39e6-4d74-a0e0-9fa1f11e4e1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala3/st6.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala3/st6.scala" afterDir="false" />
-    </list>
+    <list default="true" id="f16c7902-39e6-4d74-a0e0-9fa1f11e4e1e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -149,7 +147,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala3/st6.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
+            <state relative-caret-position="827">
               <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
             </state>
           </provider>
@@ -198,10 +196,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
-    <option name="y" value="91" />
-    <option name="width" value="2134" />
-    <option name="height" value="1027" />
+    <option name="x" value="137" />
+    <option name="y" value="-1956" />
+    <option name="width" value="2137" />
+    <option name="height" value="1364" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -268,7 +266,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551607825021" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552120663740" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -350,10 +348,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="91" width="2134" height="1027" extended-state="0" />
+    <frame x="137" y="-1956" width="2137" height="1364" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16347992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16324583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -361,7 +359,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.24213837" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -504,7 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala3/st6.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
+        <state relative-caret-position="827">
           <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
         </state>
       </provider>
